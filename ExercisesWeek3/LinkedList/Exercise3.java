@@ -1,4 +1,4 @@
-package com.revature.Week3.Day1.Exercises;
+package com.revature.Week3.Day1.Exercises.LinkedList;
 
 import java.util.LinkedList;
 import java.util.Iterator;
