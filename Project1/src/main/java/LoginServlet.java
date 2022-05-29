@@ -19,17 +19,23 @@ public class LoginServlet extends HttpServlet {
         String password = request.getParameter("password");
 
         if(username.equals("admin") && password.equals("123")){
-            out.println("you are successfully logged in");
+            out.println("<h1>you are successfully logged in</h1>");
             out.println("<br>Welcome "+ username);
 
             HttpSession session = request.getSession();
             session.setAttribute("username", username);
+
+            RequestDispatcher requestDispatcher = request.getRequestDispatcher("/manager.html");
+            requestDispatcher.include(request, response);
         }else if(username.equals("employee") && password.equals("123")){
-            out.println("you are successfully logged in");
+            out.println("<h1>you are successfully logged in</h1>");
             out.println("<br>Welcome "+ username);
 
             HttpSession session = request.getSession();
             session.setAttribute("username", username);
+
+            RequestDispatcher requestDispatcher = request.getRequestDispatcher("/employee.html");
+            requestDispatcher.include(request, response);
         }else{
             out.println("sorry! invalid details");
             RequestDispatcher requestDispatcher = request.getRequestDispatcher("/login.html");
